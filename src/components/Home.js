@@ -39,19 +39,6 @@ const StyledElement = styled(motion.div)`
     }
 `;
 
-const links = [
-    {
-        imgUrl: 'https://w7.pngwing.com/pngs/646/324/png-transparent-github-computer-icons-github-logo-monochrome-head-thumbnail.png',
-        name: "gitbub",
-        url:"#"
-    },
-    {
-        imgUrl: 'https://www.iconpacks.net/icons/1/free-linkedin-icon-112-thumb.png',
-        name: 'linkedin',
-        url:'#'
-    }
-]
-
 const Home = () => {
     return (
         <StyledElement>
@@ -64,7 +51,7 @@ const Home = () => {
                 animate={{x: 0}}
                 transition={{duration: 0.3}}>
                
-                <SocialMediaLinks links={links}/>
+                <SocialMediaLinks />
 
             </motion.div>
         </StyledElement>

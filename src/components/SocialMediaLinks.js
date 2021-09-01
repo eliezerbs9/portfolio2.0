@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import AnimatedLink from './AnimatedLink';
 
+
 const StyledElement = styled(motion.div)`
     width: 100%;
     padding: 20px 0;
@@ -26,7 +27,22 @@ const variants = {
     }
 }
 
-const SocialMediaLinks = ({links}) => {
+
+const links = [
+    {
+        imgUrl: require('../assets/github.png').default,
+        name: "github",
+        url:"#"
+    },
+    {
+        imgUrl: require('../assets/linkedin.png').default,
+        name: 'linkedin',
+        url:'#'
+    }
+]
+
+
+const SocialMediaLinks = () => {
     return (
         <StyledElement variants={variants} initial="initial" animate="animate" exit="exit">
             {links.map((link, index) => {
