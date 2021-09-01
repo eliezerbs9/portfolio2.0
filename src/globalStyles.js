@@ -3,20 +3,7 @@ import {Link} from 'react-router-dom';
 
 const GlobalStyle = createGlobalStyle`
     :root{
-        --grey: #4F595A;
-        --green: #048E6B;
-        --yellow: #FCC55B;
-        --red: #FF0606;
-        --lightgrey: #F1F1F1;
-        --lightblue: #1AD9EA;
-        --lightgreen: #00CA97;
-        --darkred: #930B0B;
-        --darkblue: #004D54;
-        --darkgreen: #004B38;
-        --bluegreen: #036A73;
-        --text-lightgrey: #EBEBEB;
-        --white: #FFFFFF;
-        --white1: #FFFAFA;
+        --lightblue: #4CC9F0;
     }
     *{
         box-sizing: border-box;
@@ -29,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     }
     body{
         font-family: 'Roboto', sans-serif;
+        color: #e1e1e1;
     }
     
 `;

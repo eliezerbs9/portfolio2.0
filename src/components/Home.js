@@ -6,7 +6,6 @@ import SocialMediaLinks from './SocialMediaLinks';
 const StyledElement = styled(motion.div)`
     padding: 60px 40px;
     background-color: rgba(0,0,0,0.7);
-    color: #e1e1e1;
     max-width: 800px;
 
     .img{
@@ -59,7 +58,7 @@ const Home = () => {
             <div  className='img'/>
             <motion.p className='top'>Hi There! I'M</motion.p>
             <p className='name'>Eliezer Barbosa</p>
-            <p className='bottom'>A <span>Full Stack Developer</span> passionate about creating interactive applications and experiences on the web.</p>
+            <p className='bottom'>A Full Stack Developer passionate about creating interactive applications and experiences on the web.</p>
             <motion.div className="animated-links"
                 initial={{x: '-100%'}}
                 animate={{x: 0}}

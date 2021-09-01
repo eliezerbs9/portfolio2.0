@@ -4,13 +4,18 @@ import { motion } from 'framer-motion';
 import SidebarLinks from '../SidebarLinks';
 
 const StyledSidebar = styled(motion.div)`
-    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
     background-color: rgba(24,24,25,0.7);
     height: 100%;
     overflow: hidden;
     transition: ease-in 0.25s;
     display: flex;
     flex-direction: column;
+    z-index: 999;
+    padding: 20px;
     gap: 50px;
 
     .logo{
@@ -20,7 +25,7 @@ const StyledSidebar = styled(motion.div)`
         width: 100%;
         img{ 
             transition: ease-in 0.25s;
-            width: 50px; 
+            width: 70px; 
         }
     }
 

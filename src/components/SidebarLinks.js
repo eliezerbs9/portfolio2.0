@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import PageLink from './PageLink';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 const StyledElement = styled(motion.ul)`
     display: flex;
@@ -10,19 +12,47 @@ const StyledElement = styled(motion.ul)`
     align-items: center;
     width: 100%;
     list-style: none;
-    gap: 20px;
+    gap: 40px;
+
+    li{width: 100%; display: flex; justify-content: center;}
 `;
+
+const AboutIcon = () => {
+    return (
+        <span class="material-icons">
+            person_outline
+        </span>
+    )
+}
+
+const ProjectsIcon = () => {
+    return (
+        <span class="material-icons">
+            devices
+        </span>
+    )
+}
 
 const links = [
     {
-        imgUrl: 'https://image.flaticon.com/icons/png/512/25/25694.png',
+        icon: <HomeOutlinedIcon />,
         name: 'Home',
         url: '/'
     },
     {
-        imgUrl: 'https://e7.pngegg.com/pngimages/213/478/png-clipart-computer-icons-scalable-graphics-font-conference-for-management-accounting-research-about-icon-text-computer-program.png',
+        icon: <AboutIcon />,
         name: 'About',
         url: '/about'
+    },
+    {
+        icon: <ProjectsIcon />,
+        name: 'Projects',
+        url: '/projects'
+    },
+    {
+        icon: <MailOutlineIcon />,
+        name: 'Contact',
+        url: '/contact'
     }
 ]
 
@@ -32,7 +62,7 @@ const SidebarLinks = ({expanded}) => {
             {links.map((link, index) => {
                 return (
                     <li key={index}>
-                        <PageLink expanded={expanded} imgUrl={link.imgUrl} name={link.name} url={link.url}/>
+                        <PageLink expanded={expanded} icon={link.icon} name={link.name} url={link.url}/>
                     </li>
                 )
             })}
