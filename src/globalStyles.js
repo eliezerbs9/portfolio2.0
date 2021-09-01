@@ -16,7 +16,9 @@ const GlobalStyle = createGlobalStyle`
     }
     body{
         font-family: 'Roboto', sans-serif;
-        color: #e1e1e1;
+        color: #E6E6E6;
+        background-color: black;
+        letter-spacing: 1.5px;
     }
     
 `;
@@ -35,7 +37,7 @@ export const Container = styled.div`
     z-index: 1;
     width: 100%;
     height: 100%;
-    max-width: 1440px;
+    max-width: 1024px;
     margin-right: auto;
     margin-left: auto;
     padding-right: 60px;

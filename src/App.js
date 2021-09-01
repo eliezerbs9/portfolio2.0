@@ -7,8 +7,9 @@ import styled from 'styled-components'
 import WAVES from 'vanta/dist/vanta.waves.min';
 import Sidebar from './components/Sidebar/Sidebar';
 import Home from './components/Home';
+import About from './components/About';
 
-const Main = styled.section`
+const Section = styled.section`
   height: 100vh;
   width: 100%;
   display: flex;
@@ -20,6 +21,11 @@ const Content = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;;
+`;
+
+const ContentWrapper = styled.div`
+      background-color: rgba(0,0,0,0.7);
+      padding: 60px 40px;
 `;
 
 function App() {
@@ -53,16 +59,21 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Main ref={vantaRef}>
+      <Section ref={vantaRef}>
         <Sidebar />
         <Content>
-          <Switch>
-              <Route path="/">
-                <Home />
-              </Route>
-          </Switch>
+          <ContentWrapper>
+            <Switch>
+                <Route exact path="/about">
+                  <About />
+                </Route>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+            </Switch>
+          </ContentWrapper>
         </Content>
-      </Main>
+      </Section>
     </>
   );
 }

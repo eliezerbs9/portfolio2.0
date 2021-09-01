@@ -4,10 +4,7 @@ import styled from 'styled-components';
 import SocialMediaLinks from './SocialMediaLinks';
 
 const StyledElement = styled(motion.div)`
-    padding: 60px 40px;
-    background-color: rgba(0,0,0,0.7);
     max-width: 800px;
-
     .img{
         width: 150px;
         height: 150px;
@@ -28,7 +25,7 @@ const StyledElement = styled(motion.div)`
 
     .name{
         font-size: 2rem;
-        color: #4CC9F0;
+        color: var(--lightblue);
         text-transform: uppercase;
         margin: 10px 0;
     }
@@ -45,7 +42,7 @@ const Home = () => {
             <div  className='img'/>
             <motion.p className='top'>Hi There! I'M</motion.p>
             <p className='name'>Eliezer Barbosa</p>
-            <p className='bottom'>A Full Stack Developer passionate about creating interactive applications and experiences on the web.</p>
+            <p className='bottom'>A <span>Full Stack Developer</span> passionate about creating interactive applications and experiences on the web.</p>
             <motion.div className="animated-links"
                 initial={{x: '-100%'}}
                 animate={{x: 0}}
