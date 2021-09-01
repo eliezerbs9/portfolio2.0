@@ -6,22 +6,26 @@ import styled from 'styled-components';
 const StyledElement = styled(Link)`
     display: flex;
     gap: 20px;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
     justify-content: ${({expanded}) => expanded ? 'flex-start' : 'center'};
+    letter-spacing: 2px;
+    padding-bottom: 5px;
 
     
     svg, span {
         color: inherit;
-        font-size: ${({expanded}) => expanded ? '36px' : '28px'};
+        font-size: ${({expanded}) => expanded ? '36px' : '36px'};
         font-weight: 200;
         align-self: ${({expanded}) => expanded ? 'flex-start' : 'center'};
-        transition: font-size ease-in 0.25s;
+        transition: font-size ease-in 0.1s;
     }
-    &, &:visited{color: white; text-decoration: none}
+    &, &:visited{color: #e1e1e1; text-decoration: none}
 
     &:hover{
-        color: var(--lightblue);
+        /* color: var(--lightblue); */
+        text-shadow: 0 0 10px var(--lightblue);
+        border-bottom: 1px solid var(--lightblue);
     }
 `;
 

@@ -11,8 +11,10 @@ const StyledElement = styled(motion.ul)`
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 50px;
     list-style: none;
     gap: 40px;
+    color: #e1e1e1;
 
     li{width: 100%; display: flex; justify-content: center;}
 `;

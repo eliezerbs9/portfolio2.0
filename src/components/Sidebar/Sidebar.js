@@ -27,6 +27,8 @@ const StyledSidebar = styled(motion.div)`
             transition: ease-in 0.25s;
             width: 70px; 
         }
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e1e1e1;
     }
 
     &:hover{
