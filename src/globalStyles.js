@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 const GlobalStyle = createGlobalStyle`
     :root{
         --lightblue: #4CC9F0;
+        --blue: #4361EE;
     }
     *{
         box-sizing: border-box;
@@ -15,10 +16,24 @@ const GlobalStyle = createGlobalStyle`
         height: 100%;
     }
     body{
-        font-family: 'Roboto', sans-serif;
-        color: #E6E6E6;
+        font-family: 'Prompt', sans-serif;
+        font-weight: 300;
+        color: #e1e1e1;
         background-color: black;
         letter-spacing: 1.5px;
+    }
+    *::-webkit-scrollbar {
+        width: 16px;
+    }
+    
+    *::-webkit-scrollbar-track {
+        background-color: #e4e4e4;
+        border-radius: 100px;
+    }
+    
+    *::-webkit-scrollbar-thumb {
+        background-color: grey;
+        border-radius: 100px;
     }
     
 `;

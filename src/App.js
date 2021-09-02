@@ -20,12 +20,15 @@ const Content = styled.main`
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;;
+  align-items: center;
+  padding: 50px 0;
 `;
 
 const ContentWrapper = styled.div`
-      background-color: rgba(0,0,0,0.7);
-      padding: 60px 40px;
+  background-color: rgba(24,24,25,0.6);
+  padding: 60px;
+  width: 1024px;
+  overflow-y: auto;
 `;
 
 function App() {
