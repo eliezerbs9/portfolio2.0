@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import SocialMediaLinks from './SocialMediaLinks';
 
 const StyledElement = styled(motion.div)`
-    max-width: 800px;
+    justify-self: center;
+    align-self: center;
+    margin: auto 0;
     .img{
         width: 150px;
         height: 150px;

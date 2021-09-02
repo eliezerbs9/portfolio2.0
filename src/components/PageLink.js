@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-const StyledElement = styled(Link)`
+const StyledElement = styled(motion.a)`
     display: flex;
     gap: 20px;
     align-items: flex-end;
@@ -11,16 +11,20 @@ const StyledElement = styled(Link)`
     justify-content: ${({expanded}) => expanded ? 'flex-start' : 'center'};
     letter-spacing: 2px;
     padding-bottom: 5px;
+    position: relative;
 
     
     svg, span {
         color: inherit;
         font-size: ${({expanded}) => expanded ? '36px' : '36px'};
         font-weight: 200;
-        align-self: ${({expanded}) => expanded ? 'flex-start' : 'center'};
         transition: font-size ease-in 0.1s;
     }
     &, &:visited{color: #e1e1e1; text-decoration: none}
+
+    .name{
+        font-size: 1.3rem;
+    }
 
     &:hover{
         /* color: var(--lightblue); */
@@ -30,10 +34,31 @@ const StyledElement = styled(Link)`
 `;
 
 const PageLink = ({icon, name, url, expanded}) => {
+    const history = useHistory()
+
     return (
-        <StyledElement to={url} expanded={expanded}>
+        <StyledElement href="#" expanded={expanded}
+            onClick={(e) => {
+                e.preventDefault();
+                history.push(url)
+            }}
+        >
             {icon}
-            {expanded && name}
+            {expanded && (
+                <motion.span className='name'
+                    initial={{
+                        x: -20
+                    }}
+                    animate={{
+                        x: 0
+                    }}
+                    transition= {{
+                        duration: 0.25
+                    }}
+                >
+                    {name}
+                </motion.span>
+            )}
         </StyledElement>
     )
 }

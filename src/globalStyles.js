@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
         letter-spacing: 1.5px;
     }
     *::-webkit-scrollbar {
-        width: 16px;
+        width: 7px;
     }
     
     *::-webkit-scrollbar-track {

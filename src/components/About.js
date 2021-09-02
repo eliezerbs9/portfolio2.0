@@ -8,6 +8,7 @@ const StyledElement = styled.div`
     h1{
         color: var(--lightblue);
         text-transform: uppercase;
+        font-weight: 400;
     }
     .about{
         display: flex;

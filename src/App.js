@@ -20,7 +20,6 @@ const Content = styled.main`
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 50px 0;
 `;
 
@@ -29,6 +28,8 @@ const ContentWrapper = styled.div`
   padding: 60px;
   width: 1024px;
   overflow-y: auto;
+  height: fit-content;
+  align-self: center;
 `;
 
 function App() {
