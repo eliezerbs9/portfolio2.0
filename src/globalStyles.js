@@ -1,4 +1,5 @@
 import styled, {createGlobalStyle} from 'styled-components';
+import { motion } from 'framer-motion';
 import {Link} from 'react-router-dom';
 
 const GlobalStyle = createGlobalStyle`
@@ -48,21 +49,13 @@ export const Section = styled.section`
     }
 `;
 
-export const Container = styled.div`
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    max-width: 1024px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 60px;
-    padding-left: 60px;
-    position: relative;
-
-    @media screen and (max-width: 768px){
-        padding-right: 30px;
-        padding-left: 30px;
-    }
+export const Container = styled(motion.div)`
+  background-color: rgba(24,24,25,0.6);
+  padding: 60px;
+  width: 1024px;
+  overflow-y: auto;
+  height: fit-content;
+  align-self: center;
 `;
 
 export const StyledLink = styled(Link)`

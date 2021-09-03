@@ -37,7 +37,7 @@ const StyledSidebar = styled(motion.aside)`
 `;
 
 const Sidebar = () => {
-    const [expanded, setExpanded] = useState(true)
+    const [expanded, setExpanded] = useState(false)
 
     return (
         <StyledSidebar onHoverStart={() => setExpanded(true)} onHoverEnd={() => setExpanded(false)}>

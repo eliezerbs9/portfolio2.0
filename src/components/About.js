@@ -3,6 +3,7 @@ import {motion} from 'framer-motion';
 import styled from 'styled-components';
 import {Container} from '../globalStyles';
 import AnimatedSkill from './AnimatedSkill';
+import AnimatedContainer from './AnimatedContainer';
 
 const StyledElement = styled.div`
     h1{
@@ -78,7 +79,8 @@ const skills = [
 
 const About = () => {
     return (
-        <StyledElement>
+        <AnimatedContainer>
+            <StyledElement>
                 <div className="about">
                     <div className="info">
                         <h1>ABOUT ME</h1>
@@ -102,7 +104,9 @@ const About = () => {
                         })}
                     </ul>
                 </div>  
-        </StyledElement>
+            </StyledElement>
+        </AnimatedContainer>
+        
     )
 }
 

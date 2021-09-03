@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import SocialMediaLinks from './SocialMediaLinks';
+import AnimatedContainer from './AnimatedContainer';
 
 const StyledElement = styled(motion.div)`
     justify-self: center;
@@ -40,20 +41,23 @@ const StyledElement = styled(motion.div)`
 
 const Home = () => {
     return (
-        <StyledElement>
-            <div  className='img'/>
-            <motion.p className='top'>Hi There! I'M</motion.p>
-            <p className='name'>Eliezer Barbosa</p>
-            <p className='bottom'>A <span>Full Stack Developer</span> passionate about creating interactive applications and experiences on the web.</p>
-            <motion.div className="animated-links"
-                initial={{x: '-100%'}}
-                animate={{x: 0}}
-                transition={{duration: 0.3}}>
-               
-                <SocialMediaLinks />
+        <AnimatedContainer>
+            <StyledElement>     
+                <div  className='img'/>
+                <motion.p className='top'>Hi There! I'M</motion.p>
+                <p className='name'>Eliezer Barbosa</p>
+                <p className='bottom'>A <span>Full Stack Developer</span> passionate about creating interactive applications and experiences on the web.</p>
+                <motion.div className="animated-links"
+                    initial={{x: '-100%'}}
+                    animate={{x: 0}}
+                    transition={{duration: 0.3}}>
+                
+                    <SocialMediaLinks />
 
-            </motion.div>
-        </StyledElement>
+                </motion.div>
+            </StyledElement>
+        </AnimatedContainer>
+        
     )
 }
 

@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {motion} from 'framer-motion';
+import {Switch, Route, useLocation} from 'react-router-dom';
+import { AnimatePresence ,motion} from 'framer-motion';
 import GlobalStyle from './globalStyles'
 import Landing from './components/Landing/Landing';
 import styled from 'styled-components'
@@ -8,6 +8,7 @@ import WAVES from 'vanta/dist/vanta.waves.min';
 import Sidebar from './components/Sidebar/Sidebar';
 import Home from './components/Home';
 import About from './components/About';
+import Projects from './components/Projects';
 
 const Section = styled.section`
   height: 100vh;
@@ -23,7 +24,7 @@ const Content = styled.main`
   padding: 50px 0;
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled(motion.div)`
   background-color: rgba(24,24,25,0.6);
   padding: 60px;
   width: 1024px;
@@ -36,6 +37,7 @@ function App() {
 
   const [vantaEffect, setVantaEffect] = useState(null)
   const vantaRef = useRef(null);
+  const location = useLocation()
 
   useEffect(() => {
     if(!vantaEffect){
@@ -66,16 +68,19 @@ function App() {
       <Section ref={vantaRef}>
         <Sidebar />
         <Content>
-          <ContentWrapper>
-            <Switch>
-                <Route exact path="/about">
-                  <About />
-                </Route>
-                <Route exact path="/">
-                  <Home />
-                </Route>
+          <AnimatePresence exitBeforeEnter>
+            <Switch location={location} key={location.pathname}>
+              <Route exact path="/projects">
+                <Projects />
+              </Route>
+              <Route exact path="/about">
+                <About />
+              </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
             </Switch>
-          </ContentWrapper>
+          </AnimatePresence> 
         </Content>
       </Section>
     </>
