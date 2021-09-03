@@ -6,6 +6,7 @@ import Landing from './components/Landing/Landing';
 import styled from 'styled-components'
 import WAVES from 'vanta/dist/vanta.waves.min';
 import Sidebar from './components/Sidebar/Sidebar';
+import ArrowDown from './components/ArrowDown';
 import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -22,6 +23,7 @@ const Content = styled.main`
   display: flex;
   justify-content: center;
   padding: 50px 0;
+  margin-bottom: 50px;
 `;
 
 const ContentWrapper = styled(motion.div)`
@@ -68,7 +70,7 @@ function App() {
       <Section ref={vantaRef}>
         <Sidebar />
         <Content>
-          <AnimatePresence exitBeforeEnter>
+          <AnimatePresence exitBeforeEnter initial={false}>
             <Switch location={location} key={location.pathname}>
               <Route exact path="/projects">
                 <Projects />

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import SidebarLinks from '../SidebarLinks';
+import ArrowDown from '../ArrowDown';
 
 const StyledSidebar = styled(motion.aside)`
     position: fixed;
@@ -11,12 +12,14 @@ const StyledSidebar = styled(motion.aside)`
     background-color: rgba(24,24,25,0.95);
     height: 100%;
     overflow: hidden;
-    transition: ease-in 0.25s;
+    transition: all .5s ease;
     display: flex;
     flex-direction: column;
     z-index: 999;
     padding: 20px;
     gap: 50px;
+    max-width: 300px;
+    justify-content: space-between;
 
     .logo{
         display: flex;
@@ -31,13 +34,15 @@ const StyledSidebar = styled(motion.aside)`
         border-bottom: 1px solid #e1e1e1;
     }
 
-    &:hover{
-        padding: 20px 40px;
+    .next{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 `;
 
 const Sidebar = () => {
-    const [expanded, setExpanded] = useState(false)
+    const [expanded, setExpanded] = useState(true)
 
     return (
         <StyledSidebar onHoverStart={() => setExpanded(true)} onHoverEnd={() => setExpanded(false)}>
@@ -48,6 +53,10 @@ const Sidebar = () => {
             <nav>
                 <SidebarLinks expanded={expanded} />
             </nav>
+
+            <div className="next">
+                <ArrowDown />
+            </div>
         </StyledSidebar>
     )
 }

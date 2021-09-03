@@ -1,14 +1,15 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import {AnimatePresence, motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const StyledElement = styled(motion.a)`
     display: flex;
     gap: 20px;
-    align-items: flex-end;
-    width: 100%;
-    justify-content: ${({expanded}) => expanded ? 'flex-start' : 'center'};
+    /* align-items: flex-end; */
+    width: fit-content;
+    /* justify-content: ${({expanded}) => expanded ? 'center' : 'center'}; */
+    /* justify-content: center; */
     letter-spacing: 2px;
     padding-bottom: 5px;
     position: relative;
@@ -44,21 +45,30 @@ const PageLink = ({icon, name, url, expanded}) => {
             }}
         >
             {icon}
-            {expanded && (
-                <motion.span className='name'
-                    initial={{
-                        x: -20
-                    }}
-                    animate={{
-                        x: 0
-                    }}
-                    transition= {{
-                        duration: 0.25
-                    }}
-                >
-                    {name}
-                </motion.span>
-            )}
+            <AnimatePresence exitBeforeEnter>
+                {expanded && (
+                    <motion.span className='name'
+                        initial={{
+                            x: -20,
+                            opacity: 0
+                        }}
+                        animate={{
+                            x: 0,
+                            opacity: 1
+                        }}
+                        exit={{
+                            x: -20,
+                            opacity: 0
+                        }}
+                        transition= {{
+                            duration: 0.25
+                        }}
+                    >
+                        {name}
+                    </motion.span>
+                )}
+            </AnimatePresence>  
+
         </StyledElement>
     )
 }

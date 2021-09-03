@@ -1,16 +1,16 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import {AnimatePresence, motion } from 'framer-motion';
 import styled from 'styled-components';
 import PageLink from './PageLink';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
-const StyledElement = styled(motion.ul)`
+const StyledElement = styled(motion.div)`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+    padding: 0 30px;
+    align-items: flex-start;
     margin-top: 50px;
     list-style: none;
     gap: 40px;
@@ -63,9 +63,7 @@ const SidebarLinks = ({expanded}) => {
         <StyledElement>
             {links.map((link, index) => {
                 return (
-                    <li key={index}>
-                        <PageLink expanded={expanded} icon={link.icon} name={link.name} url={link.url}/>
-                    </li>
+                    <PageLink key={index} expanded={expanded} icon={link.icon} name={link.name} url={link.url}/>
                 )
             })}
         </StyledElement>
