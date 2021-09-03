@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import SidebarLinks from '../SidebarLinks';
 import ArrowDown from '../ArrowDown';
 
@@ -12,14 +12,13 @@ const StyledSidebar = styled(motion.aside)`
     background-color: rgba(24,24,25,0.95);
     height: 100%;
     overflow: hidden;
-    transition: all .5s ease;
     display: flex;
     flex-direction: column;
     z-index: 999;
     padding: 20px;
     gap: 50px;
-    max-width: 300px;
     justify-content: space-between;
+
 
     .logo{
         display: flex;
@@ -42,17 +41,25 @@ const StyledSidebar = styled(motion.aside)`
 `;
 
 const Sidebar = () => {
-    const [expanded, setExpanded] = useState(true)
+    const [expanded, setExpanded] = useState(false)
 
     return (
-        <StyledSidebar onHoverStart={() => setExpanded(true)} onHoverEnd={() => setExpanded(false)}>
+        <StyledSidebar onHoverStart={() => setExpanded(true)} onHoverEnd={() => setExpanded(false)}
+            initial={{
+                width: expanded ? '300px' : 'auto'
+            }}
+            animate={{
+                width: expanded ? '300px' : 'auto'
+            }}
+            transition={{
+                duration: 0.5
+            }}
+        >
             <div className="logo">
                 <motion.img transition={{duration: 0.2, ease: 'ease-in'}} src={require('../../assets/logo.png').default} alt='logo'/>
             </div>
-
-            <nav>
-                <SidebarLinks expanded={expanded} />
-            </nav>
+            
+            <SidebarLinks expanded={expanded} />
 
             <div className="next">
                 <ArrowDown />
