@@ -55,7 +55,6 @@ export const Container = styled(motion.div)`
   width: 1024px;
   overflow-y: auto;
   height: fit-content;
-  align-self: center;
 `;
 
 export const StyledLink = styled(Link)`

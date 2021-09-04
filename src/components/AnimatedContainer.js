@@ -8,7 +8,8 @@ const StyledElement = styled(motion.div)`
   width: 1024px;
   overflow-y: auto;
   height: fit-content;
-  align-self: center;
+  margin: auto;
+  border-radius: 10px;
 `;
 
 const AnimatedContainer = ({children}) => {

@@ -4,6 +4,11 @@ import styled from 'styled-components';
 import SocialMediaLinks from './SocialMediaLinks';
 import AnimatedContainer from './AnimatedContainer';
 
+const HomeContainer = styled(AnimatedContainer)`
+    align-self: center;
+    ${AnimatedContainer}
+`;
+
 const StyledElement = styled(motion.div)`
     justify-self: center;
     align-self: center;
