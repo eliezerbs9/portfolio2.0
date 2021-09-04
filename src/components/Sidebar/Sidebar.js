@@ -9,6 +9,7 @@ const StyledSidebar = styled(motion.aside)`
     top: 0;
     left: 0;
     bottom: 0;
+    /* background-color: rgba(0,0,0,0.7); */
     background-color: rgba(24,24,25,0.95);
     height: 100%;
     overflow: hidden;

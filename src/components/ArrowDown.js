@@ -20,6 +20,8 @@ const ArrowDown = () => {
     const [nextPage, setNextPage] = useState(null)
     const location = useLocation();
     const history = useHistory();
+
+    //all pages in order
     const pages = ['/', '/about', '/projects', '/contact'];
 
     useEffect(() => {
@@ -30,6 +32,7 @@ const ArrowDown = () => {
         if(nextPage){
             setNextPage(pages[currentIndex + 1]);
         }else{
+            //return to homepage
             setNextPage(pages[0]);
         }
     }, [location])

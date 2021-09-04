@@ -2,14 +2,13 @@ import React, {useState, useEffect, useRef} from 'react';
 import {Switch, Route, useLocation} from 'react-router-dom';
 import { AnimatePresence ,motion} from 'framer-motion';
 import GlobalStyle from './globalStyles'
-import Landing from './components/Landing/Landing';
 import styled from 'styled-components'
 import WAVES from 'vanta/dist/vanta.waves.min';
 import Sidebar from './components/Sidebar/Sidebar';
-import ArrowDown from './components/ArrowDown';
 import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 const Section = styled.section`
   height: 100vh;
@@ -53,7 +52,7 @@ function App() {
             scale: 1.00,
             scaleMobile: 1.00,
             color: 0x0,
-            shininess: 150.00,
+            shininess: 100.00,
             waveHeight: 2.50,
             waveSpeed: 0.75,
             zoom: 0.65
@@ -70,17 +69,25 @@ function App() {
       <Section ref={vantaRef}>
         <Sidebar />
         <Content>
-          <AnimatePresence exitBeforeEnter initial={false}>
+          <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.pathname}>
+
+              <Route exact path="/contact">
+                <Contact />
+              </Route>
+
               <Route exact path="/projects">
                 <Projects />
               </Route>
+
               <Route exact path="/about">
                 <About />
               </Route>
+
               <Route exact path="/">
                 <Home />
               </Route>
+
             </Switch>
           </AnimatePresence> 
         </Content>

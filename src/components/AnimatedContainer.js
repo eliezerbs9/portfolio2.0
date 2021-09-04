@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const StyledElement = styled(motion.div)`
-  background-color: rgba(24,24,25,0.6);
+  background-color: rgb(255,255,255, 0.07);
   padding: 60px;
   width: 1024px;
   overflow-y: auto;
