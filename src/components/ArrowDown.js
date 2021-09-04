@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
+import {useLocation, useHistory} from 'react-router-dom'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
 const StyledElement = styled(motion.div)`
@@ -16,6 +17,24 @@ const StyledElement = styled(motion.div)`
 `;
 
 const ArrowDown = () => {
+    const [nextPage, setNextPage] = useState(null)
+    const location = useLocation();
+    const history = useHistory();
+    const pages = ['/', '/about', '/projects', '/contact'];
+
+    useEffect(() => {
+        const currentPage = location.pathname;
+        const currentIndex = pages.indexOf(currentPage);
+        const nextPage = pages[currentIndex + 1];
+
+        if(nextPage){
+            setNextPage(pages[currentIndex + 1]);
+        }else{
+            setNextPage(pages[0]);
+        }
+    }, [location])
+
+
     return (
         <StyledElement
             initial={{
@@ -38,7 +57,7 @@ const ArrowDown = () => {
                 }
             }}
         >
-            <ArrowDownwardIcon style={{fontSize: '64px', color: '#e1e1e1'}}/>
+            <ArrowDownwardIcon style={{fontSize: '64px', color: '#e1e1e1'}} onClick={() => history.push(nextPage)}/>
         </StyledElement>
     )
 }
