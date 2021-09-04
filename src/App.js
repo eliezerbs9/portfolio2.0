@@ -19,11 +19,11 @@ const Section = styled.section`
 
 const Content = styled.main`
   width: 100%;
-  height: 100%;
   display: flex;
+  min-height: 100%;
+  height: fit-content;
   justify-content: center;
   padding: 50px 0;
-  margin-bottom: 50px;
 `;
 
 const ContentWrapper = styled(motion.div)`

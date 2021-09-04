@@ -11,34 +11,54 @@ const StyledElement = styled(motion.div)`
     border-radius: 10px;
     background-color: rgba(0,0,0,.5);
     &:hover{
-        box-shadow: 0 0 10px var(--lightblue);
+        box-shadow: 0 0 5px var(--lightblue);
+        .text{
+            box-shadow: 0 0 5px #e1e1e1;
+        }
     }
 
     .img{
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100%;
         min-width: 350px;
         img{width: 100%;}
     }
 
     .info{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         .name{
             font-size: 1.5rem;
             font-weight: bold;
-            padding-bottom: 20px;
         }
         .text{
+            padding: 5px 10px;
             max-height: 200px;
             overflow-y: scroll;
+            background-color: transparent;
+            border-radius: 10px;
         }
         .links{
             list-style: none;
             display: flex;
             gap: 20px;
-            a, a:visited{color: #e1e1e1}
+            a, a:visited{color: #e1e1e1; text-decoration: none;}
             a:hover{color: var(--blue)}
+
+            li{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                padding: 5px 0;
+            }
+            .live{
+                border-radius: 50%;
+                width: 10px;
+                height: 10px;
+                background-color: red;
+            }
         }
     }
 `;
@@ -67,6 +87,15 @@ const ProjectCard = () => {
                 </div>
                 <ul className="links">
                     <li>
+                        <motion.div className="live"
+                            animate={{
+                                scale: [1, 1.5]
+                            }}
+                            transition={{
+                                duration: 0.7,
+                                yoyo: Infinity,
+                            }}
+                        ></motion.div>
                         <a href="#">Live Demo</a>
                     </li>
                     <li>

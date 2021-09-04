@@ -46,7 +46,7 @@ const StyledElement = styled(motion.div)`
 
 const Home = () => {
     return (
-        <AnimatedContainer>
+        <HomeContainer>
             <StyledElement>     
                 <div  className='img'/>
                 <motion.p className='top'>Hi There! I'M</motion.p>
@@ -61,7 +61,7 @@ const Home = () => {
 
                 </motion.div>
             </StyledElement>
-        </AnimatedContainer>
+        </HomeContainer>
         
     )
 }

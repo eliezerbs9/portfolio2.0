@@ -8,10 +8,10 @@ const GlobalStyle = createGlobalStyle`
         --blue: #4361EE;
     }
     *{
-        box-sizing: border-box;
         margin: 0;
         padding: 0;
         scroll-behavior: smooth;
+        box-sizing:border-box; 
     }
     html{
         height: 100%;
