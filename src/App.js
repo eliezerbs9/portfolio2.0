@@ -5,6 +5,7 @@ import GlobalStyle from './globalStyles'
 import styled from 'styled-components'
 import WAVES from 'vanta/dist/vanta.waves.min';
 import Sidebar from './components/Sidebar/Sidebar';
+import EmailModal from './components/EmailModal';
 import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -37,8 +38,18 @@ const ContentWrapper = styled(motion.div)`
 function App() {
 
   const [vantaEffect, setVantaEffect] = useState(null)
+  const [emailSent, setEmailSent] = useState(false)
   const vantaRef = useRef(null);
   const location = useLocation()
+
+  const showModal = (name) => {
+    console.log('show modal name: ', name)
+    setEmailSent(name)
+  }
+
+  const closeModal = () => {
+    setEmailSent(false);
+  }
 
   useEffect(() => {
     if(!vantaEffect){
@@ -67,13 +78,16 @@ function App() {
     <>
       <GlobalStyle />
       <Section ref={vantaRef}>
+        {emailSent && (
+          <EmailModal name={emailSent} closeModal={closeModal}/>
+        )}
         <Sidebar />
         <Content>
           <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.pathname}>
 
               <Route exact path="/contact">
-                <Contact />
+                <Contact showModal={showModal} />
               </Route>
 
               <Route exact path="/projects">

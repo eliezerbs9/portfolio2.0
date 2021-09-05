@@ -61,7 +61,7 @@ const StyledElement = styled.div`
 
 
 
-const Contact = () => {
+const Contact = ({showModal}) => {
     const [state, setState] = useState({
         name: '',
         email: '',
@@ -69,9 +69,15 @@ const Contact = () => {
         message: ''
     })
 
+    const handleChange = (e) => {
+        setState({
+            ...state,
+            [e.target.name]: e.target.value
+        })
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Sending email')
         const {name, email, phone, message} = state;
         let templateParams = {
             user_name: name,
@@ -83,8 +89,8 @@ const Contact = () => {
 
         emailjs.send('service_skmf82d', 'template_uk189bi', templateParams, 'user_pKdxWnUs3yYbWoS5C0muU')
             .then((result) => {
-                console.log('Email sent: ', result);
-                e.reset();
+                showModal(name)
+                e.target.reset();
             })
             .catch(error => {
                 console.error(error)
@@ -102,23 +108,31 @@ const Contact = () => {
                     <div className="info">
                         <label htmlFor='name'>
                             Name
-                            <input  type='text' name='name' autoComplete="none" placeholder='Name'/>
+                            <input  type='text' name='name' autoComplete="none" placeholder='Name'
+                                onChange={handleChange}
+                            />
                         </label>
 
                         <label htmlFor='phone'>
                             Phone
-                            <input  type='phone' name='phone' autoComplete="none"  placeholder='Phone'/>
+                            <input  type='phone' name='phone' autoComplete="none"  placeholder='Phone'
+                                onChange={handleChange}
+                            />
                         </label>
 
                         <label htmlFor='email'>
                             Email
-                            <input  type='text' name='email' placeholder='Email'/>
+                            <input  type='text' name='email' placeholder='Email'
+                                onChange={handleChange}
+                            />
                         </label>
                     </div>
                     
                     <label htmlFor='text'>
                         Message
-                        <textarea resize={false}  name="text" placeholder='Message'></textarea>
+                        <textarea resize={false}  name="message" placeholder='Message'
+                            onChange={handleChange}
+                        ></textarea>
                     </label>
 
                     <button type='submit'>Send</button>

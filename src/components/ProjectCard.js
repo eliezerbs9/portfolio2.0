@@ -44,7 +44,7 @@ const StyledElement = styled(motion.div)`
             list-style: none;
             display: flex;
             gap: 20px;
-            a, a:visited{color: #e1e1e1; text-decoration: none;}
+            a, a:visited{color: #e1e1e1; text-decoration: none; font-weight: bold}
             a:hover{color: var(--blue)}
 
             li{
