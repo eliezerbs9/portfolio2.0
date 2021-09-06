@@ -11,12 +11,34 @@ const StyledElement = styled(motion.div)`
     width: 100%;
     padding: 0 30px;
     align-items: flex-start;
-    margin-top: 50px;
     list-style: none;
     gap: 40px;
     color: #e1e1e1;
 
     li{width: 100%; display: flex; justify-content: center;}
+
+    @media screen and (max-width: 1024px){
+        flex-direction: row;
+        padding: 0;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 480px){
+        width: 100%;
+        padding: 0 30px;
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        
+        &::-webkit-scrollbar-track {
+            display: none;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            display: none;
+        }
+    }
 `;
 
 const AboutIcon = () => {
@@ -58,12 +80,12 @@ const links = [
     }
 ]
 
-const SidebarLinks = ({expanded}) => {
+const SidebarLinks = ({expanded, isMobile}) => {
     return (
         <StyledElement>
             {links.map((link, index) => {
                 return (
-                    <PageLink key={index} expanded={expanded} icon={link.icon} name={link.name} url={link.url}/>
+                    <PageLink key={index} expanded={expanded} isMobile={isMobile} icon={link.icon} name={link.name} url={link.url}/>
                 )
             })}
         </StyledElement>

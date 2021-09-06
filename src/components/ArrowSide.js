@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
 import {useLocation, useHistory} from 'react-router-dom'
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 const StyledElement = styled(motion.div)`
     cursor: pointer;
@@ -10,22 +10,23 @@ const StyledElement = styled(motion.div)`
     bottom: 0;
     z-index: 999;
     color: var(--lightblue);
+    display: none;
 
     svg{
-        font-size: 64px;
+        font-size: 36px;
         color: #e1e1e1;
     }
 
-    &:hover{
-        border-bottom: 1px solid var(--lightblue)
+    @media screen and (max-width: 1024px){
+        display: block
     }
 
-    @media screen and (max-width: 1024px){
-        display: none;
+    @media screen and (max-width: 768px){
+        svg{ font-size: 32px}
     }
 `;
 
-const ArrowDown = () => {
+const ArrowSide = () => {
     const [nextPage, setNextPage] = useState(null)
     const location = useLocation();
     const history = useHistory();
@@ -53,11 +54,11 @@ const ArrowDown = () => {
                 textShadow: 'none'
             }}
             animate={{
-                y: ['3px', '-3px'],
+                x: ['3px', '-3px'],
                 textShadow: ['0 0 10px', '0 0 15px']
             }}
             transition={{
-                y: {
+                x: {
                     duration: 1,
                     yoyo: Infinity,
                     ease: 'easeOut'
@@ -69,9 +70,9 @@ const ArrowDown = () => {
                 }
             }}
         >
-            <ArrowDownwardIcon onClick={() => history.push(nextPage)}/>
+            <ArrowForwardIcon onClick={() => history.push(nextPage)}/>
         </StyledElement>
     )
 }
 
-export default ArrowDown
+export default ArrowSide

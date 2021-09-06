@@ -36,6 +36,24 @@ const GlobalStyle = createGlobalStyle`
         background-color: grey;
         border-radius: 100px;
     }
+
+    @media screen and (max-width: 480px){
+        *::-webkit-scrollbar {
+            width: 7px;
+            height: 3px;
+        }
+        
+        *::-webkit-scrollbar-track {
+            background-color: #e4e4e4;
+            border-radius: 100px;
+        }
+        
+        *::-webkit-scrollbar-thumb {
+            background-color: grey;
+            border-radius: 100px;
+        }
+    
+    }
     
 `;
 
