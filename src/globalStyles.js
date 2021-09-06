@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     @media screen and (max-width: 480px){
+        h1{font-size: 1.5rem;}
         *::-webkit-scrollbar {
             width: 7px;
             height: 3px;

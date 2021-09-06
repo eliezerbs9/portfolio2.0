@@ -42,6 +42,12 @@ const StyledElement = styled(motion.div)`
         font-size: 1.3rem;
         span{color: #4361EE}
     }
+
+    @media screen and (max-width: 480px){
+        .top{ font-size: 1.3rem }
+        .name{ font-size: 1.5rem; }
+        .bottom { font-size: 1rem; }
+    }
 `;
 
 const Home = ({isMobile}) => {

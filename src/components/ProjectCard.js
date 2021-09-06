@@ -61,6 +61,21 @@ const StyledElement = styled(motion.div)`
             }
         }
     }
+
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        .img{ 
+            min-width: unset; 
+            img{ height: 150px; }
+        }
+
+        .info{ 
+            .name{ font-size: 1.3rem; }
+            .text{ font-size: 0.9rem; }
+        }
+    }
 `;
 
 

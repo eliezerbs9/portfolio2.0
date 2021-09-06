@@ -25,8 +25,7 @@ const Content = styled.main`
   padding: 50px 0;
 
   @media screen and (max-width: 1024px){
-    padding: 0;
-    padding-bottom: 30px;
+    padding: 0 20px 20px 20px;
   }
 `;
 

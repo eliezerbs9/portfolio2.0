@@ -14,6 +14,7 @@ const StyledElement = styled(motion.div)`
   overflow-y: auto;
 
   @media screen and (max-width: 480px){
+      background-color: rgb(255,255,255, 0.1);
       padding: 30px;
   }
 `;
@@ -27,7 +28,7 @@ const AnimatedContainer = ({children, isMobile}) => {
             const navbar_height = navbar.offsetHeight;
             if(container.current){
                 console.log('container: ', container.current)
-                container.current.style.marginTop = navbar_height+'px';
+                container.current.style.marginTop = navbar_height+30+'px';
             }
         }
 

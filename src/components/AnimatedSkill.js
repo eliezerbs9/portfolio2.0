@@ -20,6 +20,11 @@ const StyledElement = styled(motion.div)`
     &:hover{
         font-weight: bold;
     }
+
+    @media screen and (max-width: 480px){
+        gap: 10px;
+        img{ width: 50px; height: 50px;}
+    }
 `;
 
 const AnimatedSkill = ({imgUrl, name}) => {

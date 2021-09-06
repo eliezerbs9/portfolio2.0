@@ -57,6 +57,13 @@ const StyledElement = styled.div`
             }
         }
     }
+
+    @media screen and (max-width: 768px){
+        form{
+            .info{
+                flex-direction: column;
+            }
+        }
 `;
 
 
