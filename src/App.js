@@ -24,6 +24,11 @@ const Content = styled.main`
   height: fit-content;
   justify-content: center;
   padding: 50px 0;
+
+  @media screen and (max-width: 1024px){
+    padding: 0;
+    padding-bottom: 30px;
+  }
 `;
 
 const ContentWrapper = styled(motion.div)`
@@ -41,9 +46,25 @@ function App() {
   const [emailSent, setEmailSent] = useState(false)
   const vantaRef = useRef(null);
   const location = useLocation()
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+      const isMobile = window.innerWidth < 1024;
+      setIsMobile(isMobile)
+
+      window.addEventListener('resize', () => {
+          const isMobile = window.innerWidth < 1024;
+          setIsMobile(isMobile)
+      })
+
+      return () => {
+          window.removeEventListener('resize', () => {
+              setIsMobile(false);
+          })
+      }
+  }, [])
 
   const showModal = (name) => {
-    console.log('show modal name: ', name)
     setEmailSent(name)
   }
 
@@ -81,25 +102,25 @@ function App() {
         {emailSent && (
           <EmailModal name={emailSent} closeModal={closeModal}/>
         )}
-        <Sidebar />
+        <Sidebar isMobile={isMobile}/>
         <Content>
           <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.pathname}>
 
               <Route exact path="/contact">
-                <Contact showModal={showModal} />
+                <Contact showModal={showModal} isMobile={isMobile} />
               </Route>
 
               <Route exact path="/projects">
-                <Projects />
+                <Projects isMobile={isMobile} />
               </Route>
 
               <Route exact path="/about">
-                <About />
+                <About isMobile={isMobile} />
               </Route>
 
               <Route exact path="/">
-                <Home />
+                <Home isMobile={isMobile} />
               </Route>
 
             </Switch>

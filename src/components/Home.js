@@ -44,9 +44,9 @@ const StyledElement = styled(motion.div)`
     }
 `;
 
-const Home = () => {
+const Home = ({isMobile}) => {
     return (
-        <HomeContainer>
+        <HomeContainer isMobile={isMobile}>
             <StyledElement>     
                 <div  className='img'/>
                 <motion.p className='top'>Hi There! I'M</motion.p>

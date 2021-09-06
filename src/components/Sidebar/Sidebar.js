@@ -75,29 +75,9 @@ const StyledSidebar = styled(motion.aside)`
     }
 `;
 
-const Sidebar = () => {
+const Sidebar = ({isMobile}) => {
     const [expanded, setExpanded] = useState(false);
-    const [isMobile, setIsMobile] = useState(false)
-
-    useEffect(() => {
-        const isMobile = window.innerWidth < 1024;
-        setIsMobile(isMobile)
-        console.log('useEffect isMobiel: ', isMobile)
-
-
-        window.addEventListener('resize', () => {
-            console.log('window width: ', window.innerWidth)
-            const isMobile = window.innerWidth < 1024;
-            console.log('useEffect isMobiel resize: ', isMobile)
-            setIsMobile(isMobile)
-        })
-
-        return () => {
-            window.removeEventListener('resize', () => {
-                setIsMobile(false);
-            })
-        }
-    }, [])
+    
 
     return (
         <StyledSidebar onHoverStart={() => !isMobile && setExpanded(true)} onHoverEnd={() => !isMobile && setExpanded(false)}

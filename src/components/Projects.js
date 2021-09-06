@@ -15,9 +15,9 @@ const StyledElement = styled.div`
     }
 `;
 
-const Projects = () => {
+const Projects = ({isMobile}) => {
     return (
-        <AnimatedContainer>
+        <AnimatedContainer isMobile={isMobile}>
             <StyledElement> 
                 <h1>MY PROJECTS</h1>
                 

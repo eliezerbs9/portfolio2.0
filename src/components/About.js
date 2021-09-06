@@ -77,9 +77,9 @@ const skills = [
     },
 ]
 
-const About = () => {
+const About = ({isMobile}) => {
     return (
-        <AnimatedContainer>
+        <AnimatedContainer isMobile={isMobile}>
             <StyledElement>
                 <div className="about">
                     <div className="info">

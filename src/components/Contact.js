@@ -61,7 +61,7 @@ const StyledElement = styled.div`
 
 
 
-const Contact = ({showModal}) => {
+const Contact = ({showModal, isMobile}) => {
     const [state, setState] = useState({
         name: '',
         email: '',
@@ -99,7 +99,7 @@ const Contact = ({showModal}) => {
 
 
     return (
-        <AnimatedContainer>
+        <AnimatedContainer isMobile={isMobile}>
             <StyledElement>
                 <h1>Contact</h1>
 
