@@ -12,7 +12,7 @@ const StyledSidebar = styled(motion.aside)`
     bottom: 0;
     /* background-color: rgba(0,0,0,0.7); */
     background-color: rgba(24,24,25,0.95);
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;

@@ -10,6 +10,8 @@ const StyledElement = styled(motion.div)`
   height: fit-content;
   margin: auto;
   border-radius: 10px;
+  max-height: 100%;
+  overflow-y: auto;
 
   @media screen and (max-width: 480px){
       padding: 30px;
@@ -20,7 +22,7 @@ const AnimatedContainer = ({children, isMobile}) => {
     const container = useRef();
 
     useEffect(() => {
-        if(isMobile !== undefined){
+        if(isMobile){
             const navbar = document.getElementsByTagName('ASIDE')[0];
             const navbar_height = navbar.offsetHeight;
             if(container.current){

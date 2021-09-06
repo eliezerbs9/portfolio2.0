@@ -40,6 +40,21 @@ const StyledElement = styled.div`
             }
         }
     }
+
+    @media screen and (max-width: 768px){
+
+        .about{
+            flex-direction: column;
+            img{ max-width: auto; }
+        }
+
+        .skills{
+            ul{
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 30px;
+            }
+        }
+    }
 `;
 
 const skills = [

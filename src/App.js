@@ -20,8 +20,7 @@ const Section = styled.section`
 const Content = styled.main`
   width: 100%;
   display: flex;
-  min-height: 100%;
-  height: fit-content;
+  height: 100vh;
   justify-content: center;
   padding: 50px 0;
 
