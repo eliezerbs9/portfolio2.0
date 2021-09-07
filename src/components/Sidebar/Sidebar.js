@@ -10,7 +10,6 @@ const StyledSidebar = styled(motion.aside)`
     top: 0;
     left: 0;
     bottom: 0;
-    /* background-color: rgba(0,0,0,0.7); */
     background-color: rgba(24,24,25,0.95);
     height: 100vh;
     overflow: hidden;
@@ -47,10 +46,13 @@ const StyledSidebar = styled(motion.aside)`
         height: fit-content;
         flex-direction: row;
         align-items: center;
+        padding: 20px;
 
         .logo{ 
             height: fit-content;
-            border-bottom: none; padding: 0; 
+            border-bottom: none; 
+            border-right: 1px solid #e1e1e1;
+            padding: 0; 
             width: 100%;
         }
 
@@ -61,6 +63,7 @@ const StyledSidebar = styled(motion.aside)`
 
     @media screen and (max-width: 480px){
         gap: 5px; 
+        padding: 10px;
         .logo {
             width: fit-content;
             padding: 0 10px;

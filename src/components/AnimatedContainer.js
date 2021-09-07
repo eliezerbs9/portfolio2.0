@@ -15,7 +15,7 @@ const StyledElement = styled(motion.div)`
 
   @media screen and (max-width: 480px){
       background-color: rgb(255,255,255, 0.1);
-      padding: 30px;
+      padding: 10px;
   }
 `;
 
@@ -27,8 +27,17 @@ const AnimatedContainer = ({children, isMobile}) => {
             const navbar = document.getElementsByTagName('ASIDE')[0];
             const navbar_height = navbar.offsetHeight;
             if(container.current){
-                console.log('container: ', container.current)
-                container.current.style.marginTop = navbar_height+30+'px';
+                //adjust margin from navbar
+                const marginTop = navbar_height + 30;
+
+                //calculate container height
+                const viewHeight = window.innerHeight;
+                const height = viewHeight - (marginTop + 20);
+
+                if(container.current.clientHeight > (viewHeight - marginTop)){
+                    container.current.style.marginTop = marginTop+'px';
+                    container.current.style.height = height+'px'; 
+                }
             }
         }
 

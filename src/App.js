@@ -47,11 +47,11 @@ function App() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-      const isMobile = window.innerWidth < 1024;
+      const isMobile = window.innerWidth <= 1024;
       setIsMobile(isMobile)
 
       window.addEventListener('resize', () => {
-          const isMobile = window.innerWidth < 1024;
+          const isMobile = window.innerWidth <= 1024;
           setIsMobile(isMobile)
       })
 
@@ -82,7 +82,7 @@ function App() {
             scale: 1.00,
             scaleMobile: 1.00,
             color: 0x0,
-            shininess: 100.00,
+            shininess: 50.00,
             waveHeight: 2.50,
             waveSpeed: 0.75,
             zoom: 0.65
