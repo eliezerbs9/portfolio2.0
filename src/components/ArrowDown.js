@@ -49,9 +49,6 @@ const ArrowDown = () => {
 
     return (
         <StyledElement
-            initial={{
-                textShadow: 'none'
-            }}
             animate={{
                 y: ['3px', '-3px'],
                 textShadow: ['0 0 10px', '0 0 15px']
@@ -59,14 +56,10 @@ const ArrowDown = () => {
             transition={{
                 y: {
                     duration: 1,
-                    yoyo: Infinity,
+                    repeatType: 'reverse',
+                    repeat: Infinity,
                     ease: 'easeOut'
                 },
-                textShadow: {
-                    duration: 1,
-                    yoyo: Infinity,
-                    ease: 'easeOut'
-                }
             }}
         >
             <ArrowDownwardIcon onClick={() => history.push(nextPage)}/>

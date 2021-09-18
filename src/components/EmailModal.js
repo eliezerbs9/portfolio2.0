@@ -27,7 +27,6 @@ const StyledElement = styled(motion.div)`
             color: #e1e1e1;
             font-size: 1rem;
             cursor: pointer;
-            margin-top: 20px;
 
             &:hover{
                 color: var(--lightblue)
@@ -41,6 +40,14 @@ const StyledElement = styled(motion.div)`
             font-size: 2rem;
         }
     }
+
+    @media screen and (max-width: 480px){
+        .box{
+            padding: 80px 30px;
+            .heading{ font-size: 1.5rem; }
+            .message{ font-size: 0.9rem; }
+        }
+    }
 `;
 
 const EmailModal = ({name , closeModal}) => {
@@ -52,19 +59,19 @@ const EmailModal = ({name , closeModal}) => {
         animate: {
             opacity: 1
         },
+        exit: {
+            opacity: 0
+        },
         transition: {
-            diration: 0.5,
+            duration: 0.25
         }
     }
     return (
-        <StyledElement variants={variants} initial="initial" animate="animate">
+        <StyledElement variants={variants} initial="initial" animate="animate" exit="exit">
             <div className="box">
                 <p className='heading'>Thanks, {name}</p>
                 <p className='message'>Your message has been sent.</p>
-
-                {/* <button>X Close</button> */}
                 <button className='close' onClick={() => closeModal()}>X</button>
-
             </div>
             
         </StyledElement>

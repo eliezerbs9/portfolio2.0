@@ -44,6 +44,7 @@ const StyledElement = styled(motion.div)`
     }
 
     @media screen and (max-width: 480px){
+        .img{ margin-bottom: 20px; }
         .top{ font-size: 1.3rem }
         .name{ font-size: 1.5rem; }
         .bottom { font-size: 1rem; }
@@ -62,9 +63,7 @@ const Home = ({isMobile}) => {
                     initial={{x: '-100%'}}
                     animate={{x: 0}}
                     transition={{duration: 0.3}}>
-                
                     <SocialMediaLinks />
-
                 </motion.div>
             </StyledElement>
         </HomeContainer>

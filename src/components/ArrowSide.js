@@ -50,9 +50,6 @@ const ArrowSide = () => {
 
     return (
         <StyledElement
-            initial={{
-                textShadow: 'none'
-            }}
             animate={{
                 x: ['3px', '-3px'],
                 textShadow: ['0 0 10px', '0 0 15px']
@@ -60,12 +57,8 @@ const ArrowSide = () => {
             transition={{
                 x: {
                     duration: 1,
-                    yoyo: Infinity,
-                    ease: 'easeOut'
-                },
-                textShadow: {
-                    duration: 1,
-                    yoyo: Infinity,
+                    repeatType: 'reverse',
+                    repeat: Infinity,
                     ease: 'easeOut'
                 }
             }}

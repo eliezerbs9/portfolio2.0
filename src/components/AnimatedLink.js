@@ -24,6 +24,10 @@ const StyledElement = styled(motion.a)`
         box-shadow: 0 0 10px;
     }
 
+    @media screen and (max-width: 480px){
+        img { width: 30px; height: 30px; };
+    }
+
 `;
 
 const variants = {
@@ -44,7 +48,8 @@ const AnimatedLink = ({imgUrl, name, url}) => {
         transition={{
             y: {
                 duration: 1,
-                yoyo: Infinity,
+                repeatType: 'reverse',
+                repeat: Infinity,
                 ease: 'easeOut'
             }
         }}>

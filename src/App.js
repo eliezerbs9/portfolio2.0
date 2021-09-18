@@ -79,8 +79,8 @@ function App() {
             gyroControls: false,
             minHeight: 200.00,
             minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
+            scale: 0.50,
+            scaleMobile: 0.50,
             color: 0x0,
             shininess: 50.00,
             waveHeight: 2.50,
@@ -97,9 +97,11 @@ function App() {
     <>
       <GlobalStyle />
       <Section ref={vantaRef}>
+        <AnimatePresence exitBeforeEnter>
         {emailSent && (
           <EmailModal name={emailSent} closeModal={closeModal}/>
         )}
+        </AnimatePresence>
         <Sidebar isMobile={isMobile}/>
         <Content>
           <AnimatePresence exitBeforeEnter>

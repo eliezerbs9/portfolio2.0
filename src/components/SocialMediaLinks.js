@@ -10,6 +10,10 @@ const StyledElement = styled(motion.div)`
     display: flex;
     justify-content: center;
     gap: 30px;
+
+    @media screen and (max-width: 480px){
+        padding: 5px 0;
+    }
 `;
 
 const variants = {
@@ -32,12 +36,12 @@ const links = [
     {
         imgUrl: require('../assets/github.png').default,
         name: "github",
-        url:"#"
+        url:"https://github.com/eliezerbs9"
     },
     {
         imgUrl: require('../assets/linkedin.png').default,
         name: 'linkedin',
-        url:'#'
+        url:'https://www.linkedin.com/in/eliezer-barbosa-da-silva-b7a7551a4/'
     }
 ]
 

@@ -63,7 +63,7 @@ const StyledSidebar = styled(motion.aside)`
 
     @media screen and (max-width: 480px){
         gap: 5px; 
-        padding: 10px;
+        padding: 5px;
         .logo {
             width: fit-content;
             padding: 0 10px;

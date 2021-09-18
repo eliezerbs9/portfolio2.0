@@ -64,6 +64,7 @@ const StyledElement = styled.div`
                 flex-direction: column;
             }
         }
+    }
 `;
 
 
@@ -110,26 +111,28 @@ const Contact = ({showModal, isMobile}) => {
             <StyledElement>
                 <h1>Contact</h1>
 
+                <p>Like of what you see? Let's talk. </p>
+                <br/>
                 <form onSubmit={handleSubmit} autoComplete="none">
 
                     <div className="info">
                         <label htmlFor='name'>
                             Name
-                            <input  type='text' name='name' autoComplete="none" placeholder='Name'
+                            <input  type='text' name='name' autoComplete="none" placeholder='Name' required
                                 onChange={handleChange}
                             />
                         </label>
 
                         <label htmlFor='phone'>
                             Phone
-                            <input  type='phone' name='phone' autoComplete="none"  placeholder='Phone'
+                            <input  type='phone' name='phone' autoComplete="none"  placeholder='Phone' required
                                 onChange={handleChange}
                             />
                         </label>
 
                         <label htmlFor='email'>
                             Email
-                            <input  type='text' name='email' placeholder='Email'
+                            <input  type='text' name='email' placeholder='Email' required
                                 onChange={handleChange}
                             />
                         </label>
@@ -137,7 +140,7 @@ const Contact = ({showModal, isMobile}) => {
                     
                     <label htmlFor='text'>
                         Message
-                        <textarea resize={false}  name="message" placeholder='Message'
+                        <textarea resize={false}  name="message" placeholder='Message' required
                             onChange={handleChange}
                         ></textarea>
                     </label>

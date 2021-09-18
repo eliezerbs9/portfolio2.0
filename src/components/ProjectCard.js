@@ -108,7 +108,9 @@ const ProjectCard = () => {
                             }}
                             transition={{
                                 duration: 0.7,
-                                yoyo: Infinity,
+                                repeatType: 'reverse',
+                                repeat: Infinity,
+                                ease: 'easeOut'
                             }}
                         ></motion.div>
                         <a href="#">Live Demo</a>

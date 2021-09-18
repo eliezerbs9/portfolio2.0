@@ -39,12 +39,12 @@ const StyledElement = styled(motion.a)`
     }
 
     @media screen and (max-width: 480px){
-        svg, span{ font-size: 24px; }
+        align-self: center;
+        svg, span{ font-size: 20px; }
     }
 `;
 
 const PageLink = ({icon, name, url, expanded, isMobile}) => {
-    const [visible, setVisible] = useState(true);
     const history = useHistory();
     const location = useLocation();
     const ref = useRef();
@@ -52,8 +52,8 @@ const PageLink = ({icon, name, url, expanded, isMobile}) => {
     useEffect(() => {
         const element = ref.current;
         const pathname = location.pathname.substring(1);
-        console.log('isMobile: ', isMobile)
         if(pathname.toLowerCase() === name.toLowerCase()){
+            //hightlight selected link
             element.style.borderBottom = '2px solid var(--lightblue)';
             element.style.backgroundColor = 'rgba(255,255,255,0.07)';
             if(isMobile){
@@ -66,6 +66,7 @@ const PageLink = ({icon, name, url, expanded, isMobile}) => {
         }
 
         if((pathname.toLowerCase() === '') && (name.toLowerCase() === 'home')){
+            //hightlight selected link
             element.style.borderBottom = '2px solid var(--lightblue)';
             element.style.backgroundColor = 'rgba(255,255,255,0.07)';
             if(isMobile){
@@ -80,7 +81,7 @@ const PageLink = ({icon, name, url, expanded, isMobile}) => {
             element.style.backgroundColor = 'unset';
             element.style.borderBottom = 'none'
             if(isMobile){
-                element.childNodes[0].style.fontSize = '24px'
+                element.childNodes[0].style.fontSize = '20px'
             }
             else{
                 element.childNodes[0].style.fontSize = '36px';

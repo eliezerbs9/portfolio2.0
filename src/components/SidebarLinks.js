@@ -25,8 +25,9 @@ const StyledElement = styled(motion.div)`
 
     @media screen and (max-width: 480px){
         width: 100%;
-        padding: 0 30px;
+        padding: 0 20px;
         overflow-x: scroll;
+        gap: 10px;
         &::-webkit-scrollbar {
             display: none;
         }
@@ -43,7 +44,7 @@ const StyledElement = styled(motion.div)`
 
 const AboutIcon = () => {
     return (
-        <span class="material-icons">
+        <span className="material-icons">
             person_outline
         </span>
     )
@@ -51,7 +52,7 @@ const AboutIcon = () => {
 
 const ProjectsIcon = () => {
     return (
-        <span class="material-icons">
+        <span className="material-icons">
             devices
         </span>
     )

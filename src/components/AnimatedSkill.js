@@ -11,15 +11,9 @@ const StyledElement = styled(motion.div)`
     width: fit-content;
     padding: 5px;
     letter-spacing: 2px;
-
-    img{
-        width: 70px;
-        height: 70px;
-    }
-
-    &:hover{
-        font-weight: bold;
-    }
+    img{  width: 70px; height: 70px; }
+    span { text-align: center; }
+    &:hover{ font-weight: bold; }
 
     @media screen and (max-width: 480px){
         gap: 10px;
@@ -36,7 +30,8 @@ const AnimatedSkill = ({imgUrl, name}) => {
             transition={{
                 y: {
                     duration: 1,
-                    yoyo: Infinity,
+                    repeatType: 'reverse',
+                    repeat: Infinity,
                     ease: 'easeOut'
                 }
             }}

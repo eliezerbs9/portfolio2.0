@@ -23,6 +23,7 @@ const AnimatedContainer = ({children, isMobile}) => {
     const container = useRef();
 
     useEffect(() => {
+        //calculate navbar height and adjust margin from container
         if(isMobile){
             const navbar = document.getElementsByTagName('ASIDE')[0];
             const navbar_height = navbar.offsetHeight;
@@ -58,7 +59,7 @@ const AnimatedContainer = ({children, isMobile}) => {
                 opacity: 0
             }}
             transition={{
-                duration: 0.35
+                duration: 0.5
             }}
         >
             {children}
