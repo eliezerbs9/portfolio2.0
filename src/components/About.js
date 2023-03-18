@@ -111,7 +111,7 @@ const About = ({ isMobile }) => {
           <div className="info">
             <h1>ABOUT ME</h1>
             <p className="name">Eliezer Barbosa</p>
-            <p className="job">Software Engeneer</p>
+            <p className="job">Software Engineer</p>
             <br />
             <p>
               I am a specialist on web developing ground and got a profound
