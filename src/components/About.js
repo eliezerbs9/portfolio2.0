@@ -50,7 +50,7 @@ const StyledElement = styled.div`
 
   @media screen and (max-width: 768px) {
     .about {
-      flex-direction: column;
+      flex-direction: column-reverse;
       img {
         max-width: auto;
       }
@@ -111,6 +111,9 @@ const About = ({ isMobile }) => {
         <div className="about">
           <div className="info">
             <h1>ABOUT ME</h1>
+            {isMobile && (
+              <img src={profile} alt="Eliezer Barbosa profile picture" />
+            )}
             <p className="name">Eliezer Barbosa</p>
             <p className="job">Software Engineer</p>
             <br />
@@ -128,7 +131,9 @@ const About = ({ isMobile }) => {
               coding languages and other skills given bellow.
             </p>
           </div>
-          <img src={profile} alt="Eliezer Barbosa profile picture" />
+          {!isMobile && (
+            <img src={profile} alt="Eliezer Barbosa profile picture" />
+          )}
         </div>
 
         <div className="skills">
