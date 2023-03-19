@@ -60,7 +60,7 @@ function App() {
         setIsMobile(false);
       });
     };
-  }, []);
+  }, [isMobile]);
 
   const showModal = (name) => {
     setEmailSent(name);

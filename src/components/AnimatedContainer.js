@@ -35,13 +35,11 @@ const AnimatedContainer = ({ children, isMobile }) => {
         const viewHeight = window.innerHeight;
         const height = viewHeight - (marginTop + 20);
 
-        if (container.current.clientHeight > viewHeight - marginTop) {
-          container.current.style.marginTop = marginTop + "px";
-          container.current.style.height = height + "px";
-        }
+        container.current.style.marginTop = marginTop + "px";
+        container.current.style.height = height + "px";
       }
     }
-  }, [isMobile, children, container]);
+  }, [isMobile, children]);
 
   return (
     <StyledElement
