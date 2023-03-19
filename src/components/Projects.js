@@ -38,7 +38,6 @@ const Projects = ({ isMobile }) => {
             (asset) => asset.sys.id === item.fields.image.sys.id
           );
           project.image = image.fields;
-          console.log(project);
           arr.push(project);
         });
         setProjects(arr);

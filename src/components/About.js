@@ -15,6 +15,7 @@ const StyledElement = styled.div`
     display: flex;
     gap: 10px;
     .info {
+      margin-right: 15px;
       letter-spacing: 2px;
       .name {
         font-size: 1rem;
@@ -112,6 +113,12 @@ const About = ({ isMobile }) => {
             <h1>ABOUT ME</h1>
             <p className="name">Eliezer Barbosa</p>
             <p className="job">Software Engineer</p>
+            <br />
+            <p>
+              I create pages and apps that are both user-friendly and reliable.
+              I am extremely passionate about my work, and always strive to
+              provide the best possible experience for my clients.
+            </p>
             <br />
             <p>
               I am a specialist on web developing ground and got a profound

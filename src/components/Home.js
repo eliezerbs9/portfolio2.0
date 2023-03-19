@@ -71,7 +71,7 @@ const Home = ({ isMobile }) => {
         <motion.p className="top">Hi There! I'M</motion.p>
         <p className="name">Eliezer Barbosa</p>
         <h1 className="bottom">
-          A <span>Creative Freelance & Full Stack Web Developer</span>{" "}
+          A creative <span>Freelance & Full Stack Web Developer</span>{" "}
           passionate about creating interactive applications and experiences on
           the web.
         </h1>
