@@ -19,7 +19,6 @@ const StyledSidebar = styled(motion.aside)`
   padding: 20px;
   gap: 50px;
   justify-content: space-between;
-  max-width: 300px;
 
   .logo {
     display: flex;
