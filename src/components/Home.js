@@ -42,6 +42,7 @@ const StyledElement = styled(motion.div)`
   .bottom {
     font-size: 1.3rem;
     span {
+      font-weight: bold;
       color: #4361ee;
     }
   }
@@ -69,10 +70,11 @@ const Home = ({ isMobile }) => {
         <div className="img" />
         <motion.p className="top">Hi There! I'M</motion.p>
         <p className="name">Eliezer Barbosa</p>
-        <p className="bottom">
-          A <span>Full Stack Developer</span> passionate about creating
-          interactive applications and experiences on the web.
-        </p>
+        <h1 className="bottom">
+          A <span>Creative Freelance & Full Stack Web Developer</span>{" "}
+          passionate about creating interactive applications and experiences on
+          the web.
+        </h1>
         <motion.div
           className="animated-links"
           initial={{ x: "-100%" }}
